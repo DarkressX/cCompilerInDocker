@@ -4,4 +4,5 @@ services:
         container_name: c-compiler
         volumes:
             - '/tmp/dockertest/source:/mnt/source'
+            - '/tmp/dockertest/output:/mnt/output'
         image: c-compiler:latest
