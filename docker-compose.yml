@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+    c-compiler:
+        container_name: c-compiler
+        volumes:
+            - '/tmp/dockertest/source:/mnt/source'
+        image: c-compiler:latest
