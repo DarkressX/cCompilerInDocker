@@ -5,4 +5,4 @@ services:
         volumes:
             - '/tmp/dockertest/source:/mnt/source'
             - '/tmp/dockertest/output:/mnt/output'
-        image: c-compiler:latest
+        image: darkress/c-compiler:latest
