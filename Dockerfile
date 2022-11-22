@@ -10,4 +10,4 @@ RUN apt update && apt install -y --no-install-recommends build-essential pip && 
     mkdir -p /mnt/output && \
     rm -rf /var/lib/apt/lists/*
 
-CMD [ "python3", "main.py" ]
+CMD [ "python3", "-u", "main.py" ]

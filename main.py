@@ -1,4 +1,5 @@
 # import time module, Observer, FileSystemEventHandler
+import sys
 import time
 import os
 from watchdog.observers import Observer
@@ -34,7 +35,7 @@ class Handler(FileSystemEventHandler):
         if event.is_directory:
             return None
 
-        elif event.event_type == 'created' or event.event_type == 'modified':
+        elif event.event_type == 'created':
 
             file_path = event.src_path
 
@@ -42,8 +43,8 @@ class Handler(FileSystemEventHandler):
 
                 print(file_path)
                 filename = os.path.basename(file_path)
-                print(os.system("gcc " + event.src_path + " -o " + output_dir+"/"+filename+".run"))
-                print("Watchdog received created event - % s." % filename)
+                os.system("gcc " + event.src_path + " -o " + output_dir+"/"+filename+".run")
+                print("Watchdog received created event - % s" % filename)
 
 
 if __name__ == '__main__':
