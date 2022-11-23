@@ -4,7 +4,7 @@ WORKDIR /run
 
 COPY main.py .
 
-RUN apt update && apt install -y --no-install-recommends build-essential pip inetutils-ping && \
+RUN apt update && apt install -y --no-install-recommends build-essential pip && \
     pip install watchdog && \
     mkdir -p /mnt/source && \
     mkdir -p /mnt/output && \
